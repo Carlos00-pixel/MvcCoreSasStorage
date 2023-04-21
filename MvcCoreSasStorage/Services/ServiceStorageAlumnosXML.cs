@@ -21,7 +21,7 @@ namespace MvcCoreSasStorage.Services
             this.helper = helper;
         }
 
-        public List<Alumno> MostrarAlumnos()
+        public List<Alumno> MostrarAlumnosXML()
         {
             string path = helper.MapPath("alumnos_tables.xml", Folders.Documents);
 

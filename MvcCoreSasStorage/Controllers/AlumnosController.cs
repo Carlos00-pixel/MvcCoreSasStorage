@@ -15,13 +15,13 @@ namespace MvcCoreSasStorage.Controllers
 
         public IActionResult Index()
         {
-            List<Alumno> alumnos = this.service.MostrarAlumnos();
+            List<Alumno> alumnos = this.service.MostrarAlumnosXML();
             return View(alumnos);
         }
 
         public async Task<IActionResult> Create()
         {
-            List<Alumno> listalumno = this.service.MostrarAlumnos();
+            List<Alumno> listalumno = this.service.MostrarAlumnosXML();
             await this.service.InsertarAlumnos(listalumno);
             return RedirectToAction("Index");
         }

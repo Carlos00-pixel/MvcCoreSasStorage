@@ -5,14 +5,15 @@ using MvcCoreSasStorage.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-string azureKeys =
-    builder.Configuration.GetValue<string>
-    ("AzureKeys:StorageAccount");
-TableServiceClient tableServiceAlumnos =
-    new TableServiceClient(azureKeys);
-builder.Services.AddTransient<TableServiceClient>
-    (z => tableServiceAlumnos);
-builder.Services.AddTransient<ServiceStorageAlumnosXML>();
+//string azureKeys =
+//    builder.Configuration.GetValue<string>
+//    ("AzureKeys:StorageAccount");
+//TableServiceClient tableServiceAlumnos =
+//    new TableServiceClient(azureKeys);
+//builder.Services.AddTransient<TableServiceClient>
+//    (z => tableServiceAlumnos);
+//builder.Services.AddTransient<ServiceStorageAlumnosXML>();
+builder.Services.AddTransient<ServiceAzureAlumnos>();
 builder.Services.AddSingleton<HelperPathProvider>();
 
 
